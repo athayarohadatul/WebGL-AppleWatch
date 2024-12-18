@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athaya Rohadatul - Apple Watch</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #a4508b, #5f0a87); /* Ungu gradien */
+            background-blend-mode: overlay;
+            background-size: cover;
+        }
+
+        .left {
+    flex: 1;
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: row; /* Ubah arah layout menjadi horizontal */
+}
+
+.canvas-container {
+    margin-right: 20px; /* Beri jarak antara canvas dan info box */
+}
+
+        .zoom-buttons {
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .zoom-buttons button {
+            padding: 10px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 50%;
+            background: #000000;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .zoom-buttons button:hover {
+            background: hsl(322, 91%, 65%);
+        }
+
+        canvas {
+            border: 3px solid rgb(61, 55, 55);
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin-left: 100px; /* Geser sedikit ke kanan */
+        }
+
+        .canvas-description {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #555;
+            font-style: italic;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .info-box {
+    margin-top: 0; /* Hilangkan margin atas */
+    margin-left: 1px; /* Tambahkan margin kiri agar ada jarak dari canvas */
+    padding: 10px;
+    border: 2px solid #5f0a87; /* Warna ungu */
+    border-radius: 8px;
+    background-color: #fefefe;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    width: 300px; /* Lebar kotak */
+}
+    </style>
+</head>
+<body onload="main()">
+    <div class="container">
+        <div class="left">
+            <div class="canvas-container">
+                <!-- Zoom Buttons -->
+                <div class="zoom-buttons">
+                    <button id="zoomIn" title="Zoom In">
+                        <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button id="zoomOut" title="Zoom Out">
+                        <i class="bi bi-zoom-out"></i>
+                    </button>
+                    <!-- Animation Button -->
+                    <button id="toggleAnimation" title="Pause Animation">
+                        <i class="bi bi-pause-fill"></i>
+                    </button>
+                    <!-- Reset Button -->
+                    <button id="reset" title="Reset">
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </button>
+                </div>
+
+                <canvas id="canvas" width="670" height="510"></canvas>
+            </div>
+            <p class="canvas-description">*drag to rotate</p>
+
+            <!-- Kotakan Nama dan NRP -->
+            <div class="info-box">
+                <p>Athaya Rohadatul Yaqutah</p>
+                <p>5025221235</p>
+                <p>Grafika Komputer E</p>
+                <p>Apple Watch</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Local Scripts -->
+    <script type="text/javascript" src="js-src/parser.js"></script>
+    <script type="text/javascript" src="js-src/texture.js"></script>
+    <script type="text/javascript" src="js-src/m3.js"></script>
+    <script type="text/javascript" src="js-src/m4.js"></script>
+    <script type="text/javascript" src="js-src/webgl-utils.js"></script>
+    <script type="text/javascript" src="js-src/shader.js"></script>
+    <script type="text/javascript" src="js-src/main.js"></script>
+</body>
+</html>
